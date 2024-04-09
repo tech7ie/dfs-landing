@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Заголовок страницы</title>
+</head>
+
+<body>
+    <div id="main" class="main">
+        <header>
+            <img src="src/logo.svg" alt="Логотип" id="logo" style="margin-left: 40px;">
+            <div class="y-center" style="margin-left: auto;">
+
+                <nav id="nav-buttons" style="margin-right: 1.5rem;">
+                    <a style="margin-right: 30px; ">Главная</a>
+                    <a style="margin-right: 30px; ">Преимущества</a>
+                    <a style="margin-right: 30px; ">О компании</a>
+                    <a style="margin-right: 30px; ">Как работает система</a>
+                </nav>
+
+                <div class="select" id="langs">
+                    <div style="display: flex;"><div class="select-selected" id="selected-lang"><img src="src/circle-flags_ru.svg" alt="Рус">Рус</div><img src="src/mynaui_chevron-down.svg" /></div>
+                    <div class="select-items select-hide" id="lang-options">
+                        <div><img src="src/circle-flags_ru.svg" alt="Рус"> Рус</div>
+                        <div><img src="src/flag-us-svgrepo-com 1.svg" alt="Eng"> Eng</div>
+                        <div><img src="src/flag_kz-4x3.svg" alt="Каз"> Каз</div>
+                    </div>
+                </div>
+
+                <div id="display-login-button">
+                    <button id="login-button" onclick="warnModal()" class="y-center" style="margin-right: 10px;">Вход в систему DFS
+                        <img src="src/vector.svg" style="margin-left: 10px;"/>
+                    </button>
+                </div>
+                <div id="modal-screen">
+                    <div id="warnModal" class="warn-modal">
+                        <div class="warn-modal-content">
+                            <h1 class="text-18">Для входа в систему вам необходима перейти на наш сайт с компьютера!</p>
+                            <h2 class="text-14 text-gray">Система не сможет правильно функционировать на мобильных или планшетных устройствах.</p>
+                            <button id="understandBtn">Понимаю</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="modal-button"><img id="button-image" src="src/ion_menu.svg" /></button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content" style="display: flex; justify-content: end; text-align: end;">
+                        <div class="modal-items flex-col" style="gap: 25px; margin-right: 30px;">
+                            <a class="text-14" onclick="closeModal()">Главная</a>
+                            <a class="text-14" onclick="closeModal()">Преимущества</a>
+                            <a class="text-14" onclick="closeModal()">О компании</a>
+                            <a class="text-14" onclick="closeModal()">Как работает система</a>
+                        </div>
+                    </div>
+                </div>
+        </header>
+
+        <div id="main-screen" class="xy-center" style="height: calc(100% - 65px)">
+
+            <div class="y-center flex-col" style="margin-bottom: 100px;">
+                <div id="cards">
+                    <div id="card" class="flex-col margin-bottom">
+                        <h1 class="text-32-18">1DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+                        <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
+                        <div class="y-center">
+                            <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
+                                <img src="src/vector.svg" style="margin-left: 10px;"/>
+                            </button>
+                            <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="xy-center">
+                    <div id="dotsContainerCards" class="xy-center" style="gap: 15px"></div>
+                </div>
+            </div>
+
+            <div id="instruction">
+                <img src="src/f7_chevron-left-2.svg" style="margin-right: 10px;">
+                <a>Инструкция по применению</a>
+            </div>
+
+            <div class="contacts">
+                <a class="contsct-item" style="border-top-left-radius: 20px;"><img src="src/bxl_telegram.svg"></a>
+                <a class="contsct-item"><img src="src/ic_baseline-whatsapp.svg" ></a>
+                <a class="contsct-item"><img src="src/material-symbols_call.svg"></a>
+                <a class="contsct-item"><img src="src/uiw_mail.svg"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="edge-screen" class="xy-center flex-col">
+
+        <div class="y-center flex-col">
+            <h1 class="text-32-18" style="margin-top: 50px; text-align: center;">Преимущества системы DFS</h1><br>
+            <h2 class="text-gray text-14" style="width: 90%; max-width: 650px; text-align: center;">Мы предлагаем уникальное сочетание преимуществ, которые делают процесс заполнения декларации простым, быстрым и безопасным.</h2><br>
+        </div>
+
+        <div class="x-center flex-wrap" style="gap: 25px;">
+            <div id="card-edge" class="flex-col">
+                <img src="src/fa-solid_feather-alt.svg"/>
+                <h2 class="text-18-16" >Простота использования системы</h2>
+                <h4 class="text-gray text-14">Наша система - это ваш быстрый и безопасный путь к правильной декларации!</h4>
+            </div>
+            <div id="card-edge" class="flex-col">
+                <img src="src/ooui_user-anonymous.svg"/>
+                <h2 class="text-18-16" >Конфиденциальность ваших данных</h2>
+                <h4 class="text-gray text-14">Все ваши личные данные и информация о финансах хранятся конфиденциально на вашем компьютере, обеспечивая полную защиту.</h4>
+            </div>
+            <div id="card-edge" class="flex-col">
+                <img src="src/solar_like-bold.svg"/>
+                <h2 class="text-18-16" >Гибкость и удобство
+                    системы DFS</h2>
+                <h4 class="text-gray text-14">С нашим сервисом вы можете заполнять декларацию в любое время и из любого места, имея только доступ к интернету.</h4>
+            </div>
+            <div id="card-edge" class="flex-col">
+                <img src="src/solar_settings-minimalistic-bold.svg"/>
+                <h2 class="text-18-16" >Полная свобода и контроль над процессом</h2>
+                <h4 class="text-gray text-14">С DFS вы контролируете процесс заполнения своей декларации, не завися от сторонних услуг или программного обеспечения</h4>
+            </div>
+        </div>
+
+        <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px; margin: 30px;">Вход в систему DFS
+            <img src="src/vector.svg" style="margin-left: 10px;"/>
+        </button>
+    </div>
+
+    <div id="about-dfs"class="xy-center" style="gap: 30px;">
+        <div class="xy-center  flex-wrap-reverse" style="gap: 25px; margin-bottom: 50px;">
+            <div id="notebook-img"></div>
+            <div style="max-width: 550px; width: 90%;" >
+                <h2 class="text-32-18 mobile-text-center" style="margin-bottom: 15px;">О компании DFS</h2>
+                <h3 class="text-18-16 text-gray mobile-text-center" style="margin-top: 15px; margin-bottom: 15px;">Узнайте больше о DFS и наших ценностях, стоящих за вашим финансовым успехом</h3>
+                <h4 class="text-14 text-gray mobile-text-center">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="why-dfs-screen" style="margin-bottom: 10px;">
+        <div id="top-waves" class="xy-center flex-col" >
+            <h1 class="x-center text-32-18" style="margin: 50px;">Почему именно DFS</h1>
+            <div class="x-center flex-wrap" style="gap: 20px; max-width: 1200px;">
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/wind.svg"/>
+                        <h2 class="text-18-16">Легкость использования</h2>
+                    </div>
+                    <h3 class="text-gray text-14">DFS предоставляет простой и интуитивно понятный интерфейс, который помогает заполнить налоговую декларацию без лишних сложностей</h3>
+                </div>
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/fast.svg"/>
+                        <h2 class="text-18-16">Быстрое заполнение</h2>
+                    </div>
+                    <h3 class="text-gray text-14">Система DFS помогает вам быстро заполнить декларацию благодаря удобным инструментам и шаблонам</h3>
+                </div>
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/lock.svg"/>
+                        <h2 class="text-18-16">Безопасное хранение данных</h2>
+                    </div>
+                    <h3 class="text-gray text-14">Все ваши личные данные и финансовая информация хранятся на вашем компьютере, обеспечивая максимальную конфиденциальность и безопасность</h3>
+                </div>
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/line.svg"/>
+                        <h2 class="text-18-16">Гибкость и удобство</h2>
+                    </div>
+                    <h3 class="text-gray text-14">Вы можете заполнять декларацию в любое удобное для вас время и место, имея доступ к интернету</h3>
+                </div>
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/clock.svg"/>
+                        <h2 class="text-18-16">Экономия времени и усилий</h2>
+                    </div>
+                    <h3 class="text-gray text-14">DFS позволяет вам сэкономить время и усилия, которые обычно тратятся на заполнение декларации вручную или с помощью других программ</h3>
+                </div>
+                <div class="why-dfs-card">
+                    <div class="why-dfs-card-content">
+                        <img src="src/human.svg"/>
+                        <h2 class="text-18-16">Персонализированные рекомендации</h2>
+                    </div>
+                    <h3 class="text-gray text-14">Система DFS предоставляет персонализированные рекомендации и подсказки, чтобы помочь вам заполнить декларацию максимально точно и полно</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="xy-center" style=" margin-top: 50px; margin-bottom: 30px; gap: 5px;">
+        <h1 class="text-32-18">Как работает DFS система</h1>
+        <img src="src/_.svg" class="mobile-resize-question-svg"/>
+    </div>
+
+    <div id="how-work" class="flex-wrap x-center" style="gap: 50px; margin-bottom: 50px;">
+        <div class="flex-col y-center" style="justify-content: space-between;">
+            <div class="video-item">
+                <img src="src/1.svg"/>
+                <div class="flex-col video-item-content">
+                    <h2 class="text-18-16">Для начала вам потребуется войти в нашу систему</h2>
+                    <h3 class="text-gray text-14">Для этого нажмите на кнопку “Вход в систему DFS”. Перед вами откроется страница ввода входа. Если у вас еще нет аккаунта, пройдите простую регистрацию для начала работы с системой</h3>
+                </div>
+            </div>
+            <div class="video-item">
+                <img src="src/2.svg"/>
+                <div class="flex-col video-item-content">
+                    <h2 class="text-18-16">Для начала вам потребуется войти в нашу систему</h2>
+                    <h3 class="text-gray text-14">Для этого нажмите на кнопку “Вход в систему DFS”. Перед вами откроется страница ввода входа. Если у вас еще нет аккаунта, пройдите простую регистрацию для начала работы с системой</h3>
+                </div>
+            </div>
+            <div class="video-item">
+                <img src="src/3.svg"/>
+                <div class="flex-col video-item-content">
+                    <h2 class="text-18-16">Для начала вам потребуется войти в нашу систему</h2>
+                    <h3 class="text-gray text-14">Для этого нажмите на кнопку “Вход в систему DFS”. Перед вами откроется страница ввода входа. Если у вас еще нет аккаунта, пройдите простую регистрацию для начала работы с системой</h3>
+                </div>
+            </div>
+            <div class="video-item">
+                <img src="src/4.svg"/>
+                <div class="flex-col video-item-content">
+                    <h2 class="text-18-16">Для начала вам потребуется войти в нашу систему</h2>
+                    <h3 class="text-gray text-14">Для этого нажмите на кнопку “Вход в систему DFS”. Перед вами откроется страница ввода входа. Если у вас еще нет аккаунта, пройдите простую регистрацию для начала работы с системой</h3>
+                </div>
+            </div>
+            <div class="video-item">
+                <img src="src/5.svg"/>
+                <div class="flex-col video-item-content">
+                    <h2 class="text-18-16">Для начала вам потребуется войти в нашу систему</h2>
+                    <h3 class="text-gray text-14">Для этого нажмите на кнопку “Вход в систему DFS”. Перед вами откроется страница ввода входа. Если у вас еще нет аккаунта, пройдите простую регистрацию для начала работы с системой</h3>
+                </div>
+            </div>
+            <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px; width: 90%; margin-top: 20px;">Вход в систему DFS
+                <img src="src/vector.svg" style="margin-left: 10px;"/>
+            </button>
+        </div>
+        <div class="flex-col" style="gap: 50px">
+            <div class="video-mobile-resize"></div>
+            <div class="ad-mobile-resize"></div>
+        </div>
+    </div>
+
+    <div id="reviews-background" class="flex-col y-center">
+        <h1 class="text-32-18 y-center" style="text-align: center; margin-top: 75px; margin-bottom: 50px;">Отзывы наших клиентов</h1>
+        <div class="x-center">
+            <div id="reviews" class="flex-col x-center">
+                <div class="" style="display: flex; gap: 25px;">
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>1Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>2Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>3Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>4Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>5Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>6Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                    <div id="card-review">
+                        <div class="card-review-content">
+                            <img src="src/ava.png" />
+                            <h3>Екатерина К.</h3>
+                        </div>
+                        <h4>7Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="x-center" style="margin-bottom: 25px;">
+        <div class="xy-center">
+            <img id="prevReviewButton" src="src/eva_arrow-up-fill.svg" style="height: 18px;"/>
+            <div id="dotsContainer" class="xy-center"></div>
+            <img id="nextReviewButton" src="src/eva_arrow-up-fill-2.svg" style="height: 18px;"/>
+        </div>
+    </div>
+
+
+    <footer style="background-color: #18181b; padding: 20px;">
+        <nav class="y-center" style="gap: 25px">
+            <img src="src/logo.svg" alt="Логотип" id="logo" style="min-height: 40px;">
+            <a>Главная</a>
+            <a>Преимущества</a>
+            <a>О компании</a>
+            <a>Как работает система</a>
+        </nav>
+    </footer>
+
+    <div class="xy-center" style="justify-content: space-between; height: 30px; text-align: center; background-color: #0f0f11;">
+        <h4 class="text-14-10" style="margin-left: 5%;">Политика конфиденциальности</h4>
+        <h4 class="text-14-10" style="margin-right: 5%;">Copyright © 2024 ООО «DFS»</h4>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
