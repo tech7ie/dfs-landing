@@ -1,3 +1,26 @@
+document.querySelectorAll('.scroll-link').forEach((link) => {
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+      let target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+          top: target.offsetTop - 70, // 100px выше
+          behavior: 'smooth'
+      });
+  });
+});
+document.querySelectorAll('.scroll-smooth').forEach((link) => {
+  link.addEventListener('click', function(e) {
+      e.preventDefault();
+      let target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth'
+      });
+  });
+});
+
+
+
 // ----------------------------burger menu modal------------------------
 
 var modal = document.getElementById("myModal");
@@ -7,9 +30,9 @@ var a = document.getElementsByClassName("close");
 
 
 function closeModal() {
+  document.body.style.overflow = "auto";
   modal.style.display = "none";
   img.src = "src/ion_menu.svg";
-  document.body.style.overflow = "auto";
 }
 
 btn.onclick = function() {
@@ -214,7 +237,7 @@ reviewsContainer.addEventListener('scroll', function() {
 
 let contentList = [
 
-  `<h1 class="text-32-18">1DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+  `<h1 class="text-32-18">1DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -222,7 +245,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">2DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+  `<h1 class="text-32-18">2DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -230,7 +253,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">3DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+  `<h1 class="text-32-18">3DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -238,7 +261,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">4DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+  `<h1 class="text-32-18">4DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -246,7 +269,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">5DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1>
+  `<h1 class="text-32-18">5DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
