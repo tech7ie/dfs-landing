@@ -58,6 +58,7 @@ header {
     align-items: center;
     z-index: 999;
     background-color: #1d1b2d;
+    transition: background-color 0.3s ease-in-out;
     /* background-image: linear-gradient(to bottom, #1d1b2d,rgba(29, 27, 45, 0.8), rgba(29, 27, 45, 0.6), rgba(29, 27, 45, 0.05)); */
 }
 nav a {
@@ -200,7 +201,7 @@ nav a:hover {
 
 .contsct-item{
     background-color: #1d1b2d;
-    padding: 11px;
+    padding: 12px;
 }
 .contsct-item:hover {
     background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)),

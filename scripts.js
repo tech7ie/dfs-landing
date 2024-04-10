@@ -1,3 +1,15 @@
+window.onscroll = function() {
+  var header = document.querySelector('header');
+  if (window.scrollY > 350) {
+      header.style.backgroundColor = '#1d1b2d';
+  } else {
+      header.style.backgroundColor = 'transparent';
+  }
+};
+
+
+
+
 document.querySelectorAll('.scroll-link').forEach((link) => {
   link.addEventListener('click', function(e) {
       e.preventDefault();
