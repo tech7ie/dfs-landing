@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <div id="main" class="main">
+
         <header>
             <img src="src/logo.svg" alt="Логотип" id="logo" style="margin-left: 40px;">
-            <div class="y-center" style="margin-left: auto;">
+            <div class="y-center" style="margin-left: auto; margin-right: 40px;">
 
                 <nav id="nav-buttons" style="margin-right: 1.5rem;">
                     <a href="#main-screen" class="scroll-link" style="margin-right: 30px;">Главная</a>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
         </header>
-
+        <div id="main" class="main">
         <div id="main-screen" class="xy-center" style="height: calc(100% - 65px)">
 
             <div class="y-center cards" style="margin-bottom: 100px;">
@@ -79,7 +79,7 @@
 
             <div id="instruction">
                 <img src="src/f7_chevron-left-2.svg" style="margin-right: 10px;">
-                <a>Инструкция по применению</a>
+                <a href="#edge-screen" >Инструкция по применению</a>
             </div>
 
             <div class="contacts">
@@ -242,8 +242,9 @@
     </div>
 
     <div id="reviews-background" class="flex-col y-center">
-        <h1 class="text-32-18 y-center" style="text-align: center; margin-top: 75px; margin-bottom: 50px;">Отзывы наших клиентов</h1>
-        <div class="x-center">
+        <h1 class="text-32-18 y-center" style="text-align: center; margin-top: 75px;">Отзывы наших клиентов</h1>
+        <div class="xy-center" style="gap: 50px;">
+            <img id="prevReviewButton" class="display-none-mobile prevReviewButton" src="" style="height: 18px;"/>
             <div id="reviews" class="flex-col x-center">
                 <div class="" style="display: flex; gap: 25px;">
                     <div id="card-review">
@@ -297,13 +298,13 @@
                     </div>
                 </div>
             </div>
+            <img id="nextReviewButton" class="display-none-mobile nextReviewButton" src="" style="height: 18px;"/>
         </div>
     </div>
-    <div class="x-center" style="margin-bottom: 25px;">
-        <div class="xy-center">
-            <img id="prevReviewButton" src="src/eva_arrow-up-fill.svg" style="height: 18px;"/>
-            <div id="dotsContainer" class="xy-center"></div>
-            <img id="nextReviewButton" src="src/eva_arrow-up-fill-2.svg" style="height: 18px;"/>
+    <div class="x-center" style="margin-bottom: 25px; margin-top: 25px;">
+        <div class="display-mobile" style="display: flex; justify-content: space-between; width: 80vw;">
+            <img id="prevReviewButton2" class="prevReviewButton display-mobile" src="src/arrow1-0.svg" style="height: 18px;"/>
+            <img id="nextReviewButton2" class="nextReviewButton display-mobile" src="src/arrow1-0.svg" style="height: 18px;"/>
         </div>
     </div>
 

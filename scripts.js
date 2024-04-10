@@ -3,22 +3,11 @@ document.querySelectorAll('.scroll-link').forEach((link) => {
       e.preventDefault();
       let target = document.querySelector(this.getAttribute('href'));
       window.scrollTo({
-          top: target.offsetTop - 70, // 100px выше
+          top: target.offsetTop - 72,
           behavior: 'smooth'
       });
   });
 });
-document.querySelectorAll('.scroll-smooth').forEach((link) => {
-  link.addEventListener('click', function(e) {
-      e.preventDefault();
-      let target = document.querySelector(this.getAttribute('href'));
-      window.scrollTo({
-          top: target.offsetTop,
-          behavior: 'smooth'
-      });
-  });
-});
-
 
 
 // ----------------------------burger menu modal------------------------
@@ -153,27 +142,45 @@ window.onload = function() {
 let reviews = document.querySelectorAll('#card-review');
 let reviewsContainer = document.querySelector('#reviews');
 
-for (let i = 0; i < reviews.length; i++) {
-  let dotDiv = document.createElement('div');
-  dotDiv.classList.add('dot-div');
 
-  let dot = document.createElement('div');
-  dot.classList.add('dot');
-  dotDiv.appendChild(dot)
+var arrow10 = "src/arrow1-0.svg";
+var arrow11 = "src/arrow1-1.svg";
+var arrow20 = "src/arrow2-0.svg";
+var arrow21 = "src/arrow2-1.svg";
 
-  dotsContainer.appendChild(dotDiv);
+
+var prevArrow = document.getElementById("prevReviewButton");
+var nextArrow = document.getElementById("nextReviewButton");
+var prevArrow2 = document.getElementById("prevReviewButton2");
+var nextArrow2 = document.getElementById("nextReviewButton2");
+
+var reviewScroll = document.getElementById("reviews");
+
+function changeArrow() {
+    // Если отзывы прокручены до конца влево
+    if (reviewScroll.scrollLeft < 10) {
+        prevArrow.src = arrow10;
+        prevArrow2.src = arrow10;
+    } else {
+        prevArrow.src = arrow11;
+        prevArrow2.src = arrow11;
+    }
+
+    // Если отзывы прокручены до конца вправо
+    if (reviewScroll.scrollLeft + reviewScroll.clientWidth >= reviewScroll.scrollWidth - 10) {
+      nextArrow.src = arrow20;
+      nextArrow2.src = arrow20;
+    } else {
+        nextArrow.src = arrow21;
+        nextArrow2.src = arrow21;
+    }
 }
 
-let dots = document.querySelectorAll('.dot-div');
-dots[getCenterReview()].style.border = '2px solid rgba(111, 110, 201, 1)';
+
+reviewScroll.onscroll = changeArrow;
 
 
-function updateDotHighlight(index) {
-  for (let dot of dots) {
-      dot.style.border = 'none';
-  }
-  dots[index].style.border = '2px solid rgba(111, 110, 201, 1)';
-}
+changeArrow();
 
 
 function getCenterReview() {
@@ -202,22 +209,32 @@ function scrollToReview(index) {
     });
 }
 
-document.querySelector('#nextReviewButton').addEventListener('click', function() {
-    let currentIndex = getCenterReview();
-    let nextIndex = (currentIndex + 1) % reviews.length;
-    scrollToReview(nextIndex);
+// Кнопки "Вперед"
+document.querySelectorAll('.nextReviewButton').forEach(function(button) {
+  button.addEventListener('click', function() {
+      let currentIndex = getCenterReview();
+      let nextIndex = currentIndex + 1;
+      if (nextIndex < reviews.length) {
+          scrollToReview(nextIndex);
+      }
+  });
 });
 
-document.querySelector('#prevReviewButton').addEventListener('click', function() {
-    let currentIndex = getCenterReview();
-    let prevIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-    scrollToReview(prevIndex);
+// Кнопки "Назад"
+document.querySelectorAll('.prevReviewButton').forEach(function(button) {
+  button.addEventListener('click', function() {
+      let currentIndex = getCenterReview();
+      let prevIndex = currentIndex - 1;
+      if (prevIndex >= 0) {
+          scrollToReview(prevIndex);
+      }
+  });
 });
 
 // Добавляем слушатель событий на прокрутку блока отзывов
 reviewsContainer.addEventListener('scroll', function() {
   let currentIndex = getCenterReview();
-  updateDotHighlight(currentIndex)
+  // updateDotHighlight(currentIndex)
 });
 
 
@@ -299,15 +316,18 @@ let dotsCards = document.querySelectorAll('.dot-div-card');
 
 dotsCards[0].style.border = '3px solid #77767f';
 dotsCards[0].querySelector('.dot-card').style.display = 'none';
+dotsCards[0].classList.add('active-dot');
 
 
 function updateDot(index) {
   for (let dot of dotsCards) {
     dot.style.border = 'none';
     dot.querySelector('.dot-card').style.display = 'block';
+    dot.classList.remove('active-dot');
   }
   dotsCards[index].style.border = '3px solid #77767f';
   dotsCards[index].querySelector('.dot-card').style.display = 'none';
+  dotsCards[index].classList.add('active-dot');
 }
 
 
