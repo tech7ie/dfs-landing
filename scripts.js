@@ -157,23 +157,31 @@ var nextArrow2 = document.getElementById("nextReviewButton2");
 var reviewScroll = document.getElementById("reviews");
 
 function changeArrow() {
-    // Если отзывы прокручены до конца влево
-    if (reviewScroll.scrollLeft < 10) {
-        prevArrow.src = arrow10;
-        prevArrow2.src = arrow10;
-    } else {
-        prevArrow.src = arrow11;
-        prevArrow2.src = arrow11;
-    }
+  // Если отзывы прокручены до конца влево
+  if (reviewScroll.scrollLeft < 10) {
+      prevArrow.src = arrow10;
+      prevArrow2.src = arrow10;
+      prevArrow.classList.add('disabled');
+      prevArrow2.classList.add('disabled');
+  } else {
+      prevArrow.src = arrow11;
+      prevArrow2.src = arrow11;
+      prevArrow.classList.remove('disabled');
+      prevArrow2.classList.remove('disabled');
+  }
 
-    // Если отзывы прокручены до конца вправо
-    if (reviewScroll.scrollLeft + reviewScroll.clientWidth >= reviewScroll.scrollWidth - 10) {
-      nextArrow.src = arrow20;
-      nextArrow2.src = arrow20;
-    } else {
-        nextArrow.src = arrow21;
-        nextArrow2.src = arrow21;
-    }
+  // Если отзывы прокручены до конца вправо
+  if (reviewScroll.scrollLeft + reviewScroll.clientWidth >= reviewScroll.scrollWidth - 10) {
+    nextArrow.src = arrow20;
+    nextArrow2.src = arrow20;
+    nextArrow.classList.add('disabled');
+    nextArrow2.classList.add('disabled');
+  } else {
+      nextArrow.src = arrow21;
+      nextArrow2.src = arrow21;
+      nextArrow.classList.remove('disabled');
+      nextArrow2.classList.remove('disabled');
+  }
 }
 
 
