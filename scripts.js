@@ -9,7 +9,28 @@ document.querySelectorAll('.scroll-link').forEach((link) => {
   });
 });
 
-
+var scrollEdges = document.querySelectorAll('.scroll-edge');
+scrollEdges.forEach(function(edge) {
+  edge.addEventListener('click', function(e) {
+    e.preventDefault();
+    let target = document.querySelector('#edge-screen');
+    window.scrollTo({
+        top: target.offsetTop - 45,
+        behavior: 'smooth'
+    });
+  });
+});
+var scrollHowWork = document.querySelectorAll('.scroll-howWork');
+scrollHowWork.forEach(function(howWork) {
+  howWork.addEventListener('click', function(e) {
+    e.preventDefault();
+    let target = document.querySelector('#how-work');
+    window.scrollTo({
+        top: target.offsetTop -150,
+        behavior: 'smooth'
+    });
+  });
+});
 // ----------------------------burger menu modal------------------------
 
 var modal = document.getElementById("myModal");
@@ -84,16 +105,6 @@ langOptions.addEventListener('click', function(e) {
 
 document.addEventListener('click', function(e) {
   langOptions.classList.add('select-hide');
-});
-
-
-// --------------------------------------instruction scroll-----------------------------------
-
-document.getElementById("instruction").addEventListener("click", function() {
-    window.scrollBy({
-        top: window.innerHeight,
-        behavior: 'smooth'
-    });
 });
 
 

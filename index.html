@@ -18,9 +18,9 @@
 
                 <nav id="nav-buttons" style="margin-right: 1.5rem;">
                     <a href="#main-screen" class="scroll-link" style="margin-right: 30px;">Главная</a>
-                    <a href="#edge-screen" class="scroll-smooth" style="margin-right: 30px;">Преимущества</a>
+                    <a class="scroll-edge" style="margin-right: 30px;">Преимущества</a>
                     <a href="#about-dfs" class="scroll-link" style="margin-right: 30px;">О компании</a>
-                    <a href="#how-work" class="scroll-link" style="margin-right: 30px;">Как работает система</a>
+                    <a class="scroll-howWork" style="margin-right: 30px;">Как работает система</a>
                 </nav>
 
                 <div class="select" id="langs">
@@ -50,10 +50,10 @@
                 <div id="myModal" class="modal">
                     <div class="modal-content" style="display: flex; justify-content: end; text-align: end;">
                         <div class="modal-items flex-col" style="gap: 25px; margin-right: 30px;">
-                            <a class="text-14" onclick="closeModal()">Главная</a>
-                            <a class="text-14 scroll-smooth" href="#edge-screen" onclick="closeModal()">Преимущества</a>
+                            <a class="text-14 scroll-link"  href="#main-screen" onclick="closeModal()">Главная</a>
+                            <a class="text-14 scroll-edge" onclick="closeModal()">Преимущества</a>
                             <a class="text-14 scroll-link" href="#about-dfs" onclick="closeModal()">О компании</a>
-                            <a class="text-14 scroll-link" href="#how-work" onclick="closeModal()">Как работает система</a>
+                            <a class="text-14 scroll-howWork" onclick="closeModal()">Как работает система</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
         <div id="main" class="main">
         <div id="main-screen" class="xy-center" style="height: calc(100% - 65px)">
 
-            <div class="y-center cards" style="margin-bottom: 100px;">
+            <div class="y-center cards">
                 <div id="card" class="flex-col margin-bottom">
                     <h1 class="text-32-18">1DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1> <br>
                     <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
@@ -77,9 +77,9 @@
                 </div>
             </div>
 
-            <div id="instruction">
+            <div id="instruction" class="scroll-edge">
                 <img src="src/f7_chevron-left-2.svg" style="margin-right: 10px;">
-                <a href="#edge-screen" >Инструкция по применению</a>
+                <a >Инструкция по применению</a>
             </div>
 
             <div class="contacts">
@@ -139,7 +139,7 @@
         </div>
     </div>
 
-    <div id="why-dfs-screen" style="margin-bottom: 10px;">
+    <div id="why-dfs-screen">
         <div id="top-waves" class="xy-center flex-col" >
             <h1 class="x-center text-32-18" style="margin: 50px;">Почему именно DFS</h1>
             <div class="x-center flex-wrap" style="gap: 20px; max-width: 1200px;">
@@ -189,12 +189,12 @@
         </div>
     </div>
 
-    <div class="xy-center" style=" margin-top: 50px; margin-bottom: 30px; gap: 5px;">
+    <div class="xy-center" style=" margin-top: 80px; margin-bottom: 40px; gap: 5px;">
         <h1 class="text-32-18">Как работает DFS система</h1>
         <img src="src/question.svg" class="mobile-resize-question-svg"/>
     </div>
 
-    <div id="how-work" class="flex-wrap x-center" style="gap: 50px; margin-bottom: 50px;">
+    <div id="how-work" class="flex-wrap x-center" style="gap: 50px;">
         <div class="flex-col y-center" style="justify-content: space-between;">
             <div class="video-item">
                 <img src="src/1.svg"/>
@@ -242,7 +242,7 @@
     </div>
 
     <div id="reviews-background" class="flex-col y-center">
-        <h1 class="text-32-18 y-center" style="text-align: center; margin-top: 75px;">Отзывы наших клиентов</h1>
+        <h1 class="text-32-18 y-center" style="text-align: center; margin-top: 80px;">Отзывы наших клиентов</h1>
         <div class="xy-center" style="gap: 50px;">
             <img id="prevReviewButton" class="display-none-mobile prevReviewButton" src=""/>
             <div id="reviews" class="flex-col x-center">
@@ -313,9 +313,9 @@
         <nav class="y-center" style="gap: 25px">
             <img src="src/logo.svg" alt="Логотип" id="logo" style="min-height: 40px;">
             <a href="#main-screen" class="scroll-link" style="margin-right: 30px;">Главная</a>
-            <a href="#edge-screen" class="scroll-smooth" style="margin-right: 30px;">Преимущества</a>
+            <a class="scroll-edge" style="margin-right: 30px;">Преимущества</a>
             <a href="#about-dfs" class="scroll-link" style="margin-right: 30px;">О компании</a>
-            <a href="#how-work" class="scroll-link" style="margin-right: 30px;">Как работает система</a>
+            <a class="scroll-howWork" style="margin-right: 30px;">Как работает система</a>
         </nav>
     </footer>
 
