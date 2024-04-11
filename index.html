@@ -13,8 +13,8 @@
 <body>
 
         <header>
-            <img src="src/logo.svg" alt="Логотип" id="logo" style="margin-left: 40px;">
-            <div class="y-center" style="margin-left: auto; margin-right: 40px;">
+            <img src="src/logo.svg" alt="Логотип" id="logo" class="margin-left-12-40">
+            <div class="y-center margin-right-12-40" style="margin-left: auto;">
 
                 <nav id="nav-buttons" style="margin-right: 1.5rem;">
                     <a href="#main-screen" class="scroll-link" style="margin-right: 30px;">Главная</a>
@@ -57,6 +57,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </header>
         <div id="main" class="main">
         <div id="main-screen" class="xy-center" style="height: calc(100% - 65px)">
@@ -69,7 +70,7 @@
                         <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
                             <img src="src/vector.svg" style="margin-left: 10px;"/>
                         </button>
-                        <h2 id="how-use" class="display-none-mobile text-gray text-14" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
+                        <h2 id="how-use" class="display-none-mobile text-gray text-14 scroll-howWork" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
                     </div>
                 </div>
                 <div class="xy-center">
@@ -94,12 +95,12 @@
 
     <div id="edge-screen" class="xy-center flex-col">
 
-        <div class="y-center flex-col" style="margin-bottom: 40px;" >
-            <h1 id="edge" class="text-32-18" style="margin-top: 50px; margin-bottom: 20px; text-align: center;">Преимущества системы DFS</h1>
-            <h2 class="text-gray text-14" style="width: 90%; max-width: 650px; text-align: center;">Мы предлагаем уникальное сочетание преимуществ, которые делают процесс заполнения декларации простым, быстрым и безопасным.</h2><br>
+        <div class="y-center flex-col edge-text" >
+            <h1 id="edge" class="text-32-18 margin-top-80-40" style="margin-bottom: 20px; text-align: center;">Преимущества системы DFS</h1>
+            <h2 class="text-gray text-14" style="width: 90%; max-width: 650px; text-align: center;">Мы предлагаем уникальное сочетание преимуществ, которые делают процесс заполнения декларации простым, быстрым и безопасным.</h2>
         </div>
 
-        <div class="x-center flex-wrap" style="gap: 40px;">
+        <div class="edge-cards">
             <div id="card-edge" class="flex-col">
                 <img src="src/fa-solid_feather-alt.svg"/>
                 <h2 class="text-18-16" >Простота использования системы</h2>
@@ -123,17 +124,17 @@
             </div>
         </div>
 
-        <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px; margin: 40px;">Вход в систему DFS
+        <button id="login-button" onclick="warnModal()" class="xy-center margin-desctop-40" style="padding: 20px;">Вход в систему DFS
             <img src="src/vector.svg" style="margin-left: 10px;"/>
         </button>
     </div>
 
-    <div id="about-dfs"class="xy-center" style="gap: 30px; margin-top: 80px;">
-        <div class="xy-center  flex-wrap-reverse" style="gap: 25px; margin-bottom: 50px;">
+    <div id="about-dfs"class="xy-center margin-top-80-40">
+        <div class="xy-center  flex-wrap-reverse" style="gap: 40px; margin-bottom: 40px;">
             <div id="notebook-img"></div>
             <div style="max-width: 550px; width: 90%;" >
-                <h2 class="text-32-18 mobile-text-center" style="margin-bottom: 15px;">О компании DFS</h2>
-                <h3 class="text-18-16 text-gray mobile-text-center" style="margin-top: 15px; margin-bottom: 15px;">Узнайте больше о DFS и наших ценностях, стоящих за вашим финансовым успехом</h3>
+                <h2 class="text-32-18 mobile-text-center" style="margin-bottom: 20px;">О компании DFS</h2>
+                <h3 class="text-18-16 text-gray mobile-text-center" style="margin-top: 15px; margin-bottom: 15px; color: #868495;">Узнайте больше о DFS и наших ценностях, стоящих за вашим финансовым успехом</h3>
                 <h4 class="text-14 text-gray mobile-text-center">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</h4>
             </div>
         </div>
@@ -141,7 +142,7 @@
 
     <div id="why-dfs-screen">
         <div id="top-waves" class="xy-center flex-col" >
-            <h1 class="x-center text-32-18" style="margin-top: 80px; margin-bottom: 40px;">Почему именно DFS</h1>
+            <h1 class="x-center text-32-18 margin-top-80-40" style="margin-bottom: 40px;">Почему именно DFS</h1>
             <div class="x-center flex-wrap" style="gap: 20px; max-width: 1200px;">
                 <div class="why-dfs-card">
                     <div class="why-dfs-card-content">
@@ -189,11 +190,14 @@
         </div>
     </div>
 
-    <div class="xy-center" style=" margin-top: 80px; margin-bottom: 40px; gap: 5px;">
-        <h1 class="text-32-18">Как работает DFS система</h1>
-        <img src="src/question.svg" class="mobile-resize-question-svg"/>
+    <div class="xy-center margin-top-80-40 flex-col" style=" margin-bottom: 40px;">
+        <div class="y-center" style="display: flex;  gap: 5px;">
+            <h1 class="text-32-18">Как работает DFS система</h1>
+            <img src="src/question.svg" class="mobile-resize-question-svg "/>
+        </div>
+        <div class="video-mobile-resize display-none-desctop" style="margin-top: 20px;"></div>
     </div>
-
+    
     <div id="how-work" class="flex-wrap x-center" style="gap: 50px;">
         <div class="flex-col y-center" style="justify-content: space-between;">
             <div class="video-item">
@@ -236,7 +240,7 @@
             </button>
         </div>
         <div class="flex-col" style="gap: 50px">
-            <div class="video-mobile-resize"></div>
+            <div class="video-mobile-resize display-none-mobile-tablet"></div>
             <div class="ad-mobile-resize"></div>
         </div>
     </div>
@@ -310,12 +314,12 @@
 
 
     <footer style="background-color: #18181b; padding: 20px;">
-        <nav class="y-center" style="gap: 25px">
+        <nav class="y-center" style="gap: 25px;  margin-left: 20px; margin-right: 20px;">
             <img src="src/logo.svg" alt="Логотип" id="logo" style="min-height: 40px;">
-            <a href="#main-screen" class="scroll-link" style="margin-right: 30px;">Главная</a>
-            <a class="scroll-edge" style="margin-right: 30px;">Преимущества</a>
-            <a href="#about-dfs" class="scroll-link" style="margin-right: 30px;">О компании</a>
-            <a class="scroll-howWork" style="margin-right: 30px;">Как работает система</a>
+            <a href="#main-screen" class="scroll-link">Главная</a>
+            <a class="scroll-edge">Преимущества</a>
+            <a href="#about-dfs" class="scroll-link">О компании</a>
+            <a class="scroll-howWork" >Как работает система</a>
         </nav>
     </footer>
 

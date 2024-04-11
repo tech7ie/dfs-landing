@@ -61,6 +61,22 @@ header {
     transition: background-color 0.3s ease-in-out;
     /* background-image: linear-gradient(to bottom, #1d1b2d,rgba(29, 27, 45, 0.8), rgba(29, 27, 45, 0.6), rgba(29, 27, 45, 0.05)); */
 }
+@media (min-width: 500px) {
+    .margin-right-12-40 {
+        margin-right: 40px;
+    }
+    .margin-left-12-40 {
+        margin-left: 40px;
+    }
+}
+@media (max-width: 500px) {
+    .margin-right-12-40 {
+        margin-right: 12px;
+    }
+    .margin-left-12-40 {
+        margin-left: 12px;
+    }
+}
 nav a {
     transition: color 0.25s;
 }
@@ -112,9 +128,9 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 12px;
     color: #7A769B;
-    height: 15px;
+    height: 16px;
     border-radius: 8px;
     padding: 12px;
     background-color: #2d2b41;
@@ -273,13 +289,17 @@ nav a:hover {
 }
 
 
-
+.hidden-content {
+    opacity: 0;
+}
 #card {
     position: relative;
     border-width: 1px;
     border: #44434d 1px solid;
     border-radius: 20px;
     z-index: 2;
+    padding: 40px;
+    transition: opacity 0.3s ease-out;
 }
 
 #card::before {
@@ -307,18 +327,19 @@ nav a:hover {
     background: linear-gradient(0deg, rgba(24, 22, 38, 0.6), rgba(24, 22, 38, 0.6)), radial-gradient(55.17% 50% at 50% 100%, rgba(128, 126, 238, 0.08) 0%, rgba(64, 69, 201, 0) 100%);
 
 }
-@media (max-width: 775px) {
+@media (max-width: 800px) {
     #card {
         width: 82vw;
+    }
+}
+@media (max-width: 600px) {
+    #card {
         padding: 40px 20px 40px 20px;
     }
-
 }
-
-@media (min-width: 775px) {
+@media (min-width: 800px) {
     #card {
         width: 700px;
-        padding: 40px;
     }
 }
 
@@ -360,10 +381,48 @@ nav a:hover {
 
 
 /* ------------------------------------------EDGE PAGE-------------------------------------------- */
+@media (max-width: 700px) {
+    .edge-cards {
+        gap: 20px;
+    }
+    #card-edge {
+        margin-bottom: 20px;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (min-width: 1450px) {
+    .edge-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
 
+}
+@media (max-width: 1450px) and (min-width: 700px) {
+    .edge-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .edge-text {
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 600px) {
+    .edge-text {
+        margin-bottom: 40px;
+    }
+    .margin-desctop-40 {
+        margin-top: 40px;
+    }
+
+}
 #card-edge {
-    gap: 10px;
-    width: 250px;
+    gap: 12px;
+    width: 290px;
     padding: 20px;
     position: relative;
     border: solid 0.5px transparent;
@@ -572,22 +631,31 @@ nav a:hover {
     background-image: url('src/ad.png');
 }
 
-@media (max-width: 600px) {
+@media (max-width: 630px) {
     .video-mobile-resize {
         height: 240px;
-        width: 336px;
+        width: calc(100vw - 24px);
         background-image: url('src/Frame 98-small.png');
     }
     .ad-mobile-resize {
         height: 284px;
-        width: 336px;
+        width: calc(100vw - 24px);
         background-image: url('src/Frame 91-small.png');
     }
     .mobile-resize-question-svg {
         height: 16px;
     }
 }
-
+@media (max-width: 800px) {
+    .display-none-mobile-tablet {
+        display: none;
+    }
+}
+@media (min-width: 800px) {
+    .display-none-desctop {
+        display: none;
+    }
+}
 
 
 /* ----------------------------------------REVIEW BLOCK----------------------------------- */
@@ -811,7 +879,7 @@ nav a:hover {
     .text-18-16 {
         margin: 0;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 24px;
     }
     .text-14-16 {
@@ -836,7 +904,7 @@ nav a:hover {
     .text-18-16 {
         margin: 0;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 400;
         line-height: 20px;
     }
     .text-14-16 {
@@ -895,4 +963,14 @@ nav a:hover {
 .flex-wrap-reverse {
     display: flex;
     flex-wrap: wrap-reverse;
+}
+@media (min-width: 750px) {
+    .margin-top-80-40 {
+        margin-top: 80px;
+    }
+}
+@media (max-width: 750px) {
+    .margin-top-80-40 {
+        margin-top: 40px;
+    }
 }

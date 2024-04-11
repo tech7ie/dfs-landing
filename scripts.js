@@ -126,7 +126,7 @@ document.addEventListener('click', function(e) {
 
 window.onload = function() {
   var items = document.querySelectorAll('.video-item');
-  var videoContainer = document.querySelector('.video-mobile-resize');
+  var videoContainers = document.querySelectorAll('.video-mobile-resize');
   var videos = [
       'https://www.youtube.com/embed/dQw4w9WgXcQ?si=KrWdcAljdRHSibXU',
       'https://www.youtube.com/embed/dQw4w9WgXcQ?si=KrWdcAljdRHSibXU',
@@ -143,16 +143,20 @@ window.onload = function() {
       this.classList.add('active');
       var videoUrl = videos[index];
       var iframe = '<iframe width="100%" height="100%" src="' + videoUrl + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-      videoContainer.innerHTML = iframe;
+      videoContainers.forEach(function(videoContainer) {
+          videoContainer.innerHTML = iframe;
+      });
       });
   });
-  
   
   items[0].classList.add('active');
   var firstVideoUrl = videos[0];
   var firstIframe = '<iframe width="100%" height="100%" src="' + firstVideoUrl + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-  videoContainer.innerHTML = firstIframe;
-  };
+  videoContainers.forEach(function(videoContainer) {
+      videoContainer.innerHTML = firstIframe;
+  });
+};
+
 
 
 
@@ -309,7 +313,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">4DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
+  `<h1 class="text-32-18">5DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -317,7 +321,7 @@ let contentList = [
       </button>
       <h2 id="how-use" class="display-none-mobile text-gray text-18-16" style="margin-left: 20px; font-weight: 200;">Как начать пользоваться?</h2>
   </div>`,
-  `<h1 class="text-32-18">5DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
+  `<h1 class="text-32-18">6DFS: Ваш быстрый и безопасный<br>путь к правильной декларации!</h1><br>
   <h2 class="text-gray text-14-16">Наша система - это ваш быстрый и безопасный путь к правильной декларации!<br>Мы предлагаем простой и эффективный способ составления декларации без лишних хлопот.</h2><br>
   <div class="y-center">
       <button id="login-button" onclick="warnModal()" class="xy-center" style="padding: 20px;">Вход в систему DFS
@@ -365,7 +369,11 @@ function updateDot(index) {
 
 function changeCardContent(index) {
   let card = document.querySelector('#card');
-  card.innerHTML = contentList[index];
+  card.classList.add('hidden-content');
+  setTimeout(() => {
+      card.innerHTML = contentList[index];
+      card.classList.remove('hidden-content');
+  }, 300);
 }
 
 
@@ -375,4 +383,36 @@ for (let i = 0; i < dotsCards.length; i++) {
     updateDot(i)
   }
 }
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    let currentActiveDotIndex = Array.from(dotsCards).findIndex(dot => dot.classList.contains('active-dot'));
+    if (touchEndX < touchStartX) {
+        // Свайп влево
+        if (currentActiveDotIndex < dotsCards.length - 1) {
+            changeCardContent(currentActiveDotIndex + 1);
+            updateDot(currentActiveDotIndex + 1);
+        }
+    }
+    if (touchEndX > touchStartX) {
+        // Свайп вправо
+        if (currentActiveDotIndex > 0) {
+            changeCardContent(currentActiveDotIndex - 1);
+            updateDot(currentActiveDotIndex - 1);
+        }
+    }
+}
+
+document.querySelector('#card').addEventListener('touchstart', handleTouchStart, false);
+document.querySelector('#card').addEventListener('touchend', handleTouchEnd, false);
 
