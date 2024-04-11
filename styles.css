@@ -488,17 +488,28 @@ nav a:hover {
     background-image: url('src/Frame 79.png');
     width: 590px;
     height: 300px;
+    border-radius: 20px;
     background-size: cover;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     #notebook-img {
-        height: 296px;
-        width: 336px;
-        background-image: url('src/Frame 79-small.png');
+        width: calc(100vw - 80px);
+        background-image: url('src/Frame 79-w.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
-
+@media (max-width: 600px) {
+    #notebook-img {
+        width: calc(100vw - 28px);
+        background-image: url('src/Frame 79-small.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
 
 
 /* ---------------------------------------------WHY DFS BLOCK---------------------------------------------- */
@@ -519,8 +530,7 @@ nav a:hover {
     gap: 12px;
     padding: 12px;
     border-radius: 12px;
-    width: 80%;
-    max-width: 540px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -558,9 +568,35 @@ nav a:hover {
     height: 100%;
     z-index: -1; /* Это поместит градиент под содержимым */
 }
+@media (min-width: 800px) {
+    .why-dfs-card {
+        max-width: 540px;
+    }
+}
+@media (max-width: 800px) {
+    .why-dfs-card {
+        width: calc(100vw - 104px);
+    }
+}
+@media (max-width: 450px) {
+    .why-dfs-card {
+        width: calc(100vw - 52px);
+    }
+}
 
-
-
+.why-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+@media (max-width: 1200px) {
+    .why-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 /* ----------------------------------------HOW WORK ?---------------------------------------------- */
 
 @keyframes fadeIn {
@@ -632,18 +668,44 @@ nav a:hover {
 }
 
 @media (max-width: 630px) {
+    .video-item {
+        width: calc(100vw - 78px);
+        max-width: calc(100vw - 78px);
+    }
     .video-mobile-resize {
         height: 240px;
-        width: calc(100vw - 24px);
+        width: calc(100vw - 40px);
         background-image: url('src/Frame 98-small.png');
     }
     .ad-mobile-resize {
         height: 284px;
-        width: calc(100vw - 24px);
+        width: calc(100vw - 40px);
         background-image: url('src/Frame 91-small.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 20px;
     }
     .mobile-resize-question-svg {
         height: 16px;
+    }
+}
+@media  (min-width: 630px) and (max-width: 800px) {
+    .video-item {
+        width: calc(100vw - 120px);
+        max-width: calc(100vw - 120px);
+    }
+    .video-mobile-resize {
+        width: calc(100vw - 80px);
+        background-image: url('src/Frame 98-small.png');
+    }
+    .ad-mobile-resize {
+        width: calc(100vw - 80px);
+        background-image: url('src/Frame 91-small.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 20px;
     }
 }
 @media (max-width: 800px) {
