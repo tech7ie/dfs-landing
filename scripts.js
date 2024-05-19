@@ -78,10 +78,8 @@ function warnModal() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
     warnModalDiv.style.display = "block";
     document.body.style.overflow = "hidden";
-
-
   } else {
-
+    window.location.href = "https://example.com"; // Тут меняется ссылка
   }
 };
 
